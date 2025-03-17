@@ -66,32 +66,55 @@ class FeedViewModel: ObservableObject {
             feedItems = cachedItems
         }
         
-        var allItems: [FeedItem] = []
         var loadErrors: [String] = []
         var loadedAny = false
         
         // Load team content first
         do {
             let (teamItems, teamErrors, teamLoaded) = await loadTeamContent()
-            allItems.append(contentsOf: teamItems)
+            if teamLoaded {
+                // Sort and display team items immediately
+                feedItems = teamItems.sorted(by: { $0.publishedDate > $1.publishedDate })
+                loadedAny = true
+                print("Loaded \(teamItems.count) team-specific items")
+            }
             loadErrors.append(contentsOf: teamErrors)
-            loadedAny = loadedAny || teamLoaded
+            
+            // Start loading general content in the background
+            if !Task.isCancelled {
+                Task { [weak self] in
+                    do {
+                        let (generalItems, generalErrors, generalLoaded) = await self?.loadGeneralContent() ?? ([], [], false)
+                        if generalLoaded {
+                            await MainActor.run {
+                                // Merge and sort all items
+                                self?.feedItems = (self?.feedItems ?? []) + generalItems
+                                self?.feedItems.sort(by: { $0.publishedDate > $1.publishedDate })
+                                print("Added \(generalItems.count) general items")
+                                
+                                // Cache all items
+                                self?.cacheManager.cacheFeedItems(self?.feedItems ?? [])
+                            }
+                        }
+                        if !generalErrors.isEmpty {
+                            await MainActor.run {
+                                self?.hasPartialError = true
+                                self?.errorMessage = generalErrors.first
+                                print("Partial error loading general content: \(generalErrors.first ?? "Unknown error")")
+                            }
+                        }
+                    } catch {
+                        print("Error loading general content: \(error)")
+                        await MainActor.run {
+                            self?.hasPartialError = true
+                            self?.errorMessage = error.localizedDescription
+                        }
+                    }
+                }
+            }
         } catch {
             print("Error loading team content: \(error)")
             loadErrors.append(error.localizedDescription)
-        }
-        
-        // Then load general content
-        if !Task.isCancelled {
-            do {
-                let (generalItems, generalErrors, generalLoaded) = await loadGeneralContent()
-                allItems.append(contentsOf: generalItems)
-                loadErrors.append(contentsOf: generalErrors)
-                loadedAny = loadedAny || generalLoaded
-            } catch {
-                print("Error loading general content: \(error)")
-                loadErrors.append(error.localizedDescription)
-            }
         }
         
         // Check if task was cancelled
@@ -101,23 +124,8 @@ class FeedViewModel: ObservableObject {
             return
         }
         
-        // Process results and handle errors
-        if loadedAny {
-            // Sort all items by date
-            feedItems = allItems.sorted(by: { $0.publishedDate > $1.publishedDate })
-            print("Total items loaded: \(feedItems.count)")
-            
-            // Cache successful results
-            cacheManager.cacheFeedItems(feedItems)
-            
-            // Set partial error if we had some failures
-            if !loadErrors.isEmpty {
-                hasPartialError = true
-                errorMessage = loadErrors.first
-                print("Partial error: \(loadErrors.first ?? "Unknown error")")
-            }
-        } else {
-            // Complete failure - no items loaded at all
+        // Handle complete failure case
+        if !loadedAny {
             error = NSError(domain: "FeedViewModel", 
                           code: -1, 
                           userInfo: [NSLocalizedDescriptionKey: "Failed to load any content",
