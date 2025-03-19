@@ -48,8 +48,55 @@ Our mission is to:
 - **State Management**: Efficient view model architecture with SwiftUI
 - **Background Audio**: AVFoundation integration for podcast playback
 
+## App Store Submission Checklist
 
-2. Build and run the project (⌘+R)
+### Required Information
+- [ ] App Store Connect account setup
+- [ ] Apple Developer Program membership
+- [ ] App Privacy information filled out
+- [ ] Export compliance documentation (no encryption used)
+
+### App Store Listing
+- [ ] App name: FootyFeed
+- [ ] Subtitle (30 characters)
+- [ ] Description
+- [ ] Keywords
+- [ ] Support URL
+- [ ] Privacy Policy URL
+- [ ] App Store age rating information
+
+### Assets Required
+- [ ] App Icon (1024x1024)
+- [ ] Screenshots for:
+  - [ ] 6.7" Display (iPhone 14 Pro Max)
+  - [ ] 6.5" Display (iPhone 14 Plus)
+  - [ ] 5.5" Display (iPhone 8 Plus)
+- [ ] App Preview Video (optional)
+
+### Technical Requirements
+- [x] Info.plist configured with:
+  - [x] Privacy descriptions
+  - [x] Supported orientations
+  - [x] Required device capabilities
+  - [x] Transport security settings
+- [ ] Version number (1.0)
+- [ ] Build number (1)
+- [ ] Proper error handling
+- [ ] Remove debug logging
+- [ ] Test on multiple devices
+- [ ] Archive and validate build
+
+### Content Rights
+- [ ] Verify rights to use:
+  - [ ] YouTube content (via public API)
+  - [ ] Podcast feeds (via public RSS)
+  - [ ] Team badges and names
+  - [ ] App icon and assets
+
+## Development Setup
+1. Clone the repository
+2. Open FootyFeed.xcodeproj in Xcode
+3. Build and run
 
 ## Project Structure
 
@@ -125,3 +172,6 @@ The app follows the MVVM (Model-View-ViewModel) architecture pattern:
 - Base content and team-specific content are seamlessly merged into a single chronological feed
 - Smart filtering ensures relevant content priority
 - All content maintains high quality and relevance to Premier League football
+
+## Support
+For support, please email: feedfooty@gmail.com
