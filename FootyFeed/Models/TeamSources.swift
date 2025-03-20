@@ -142,7 +142,6 @@ struct TeamSources {
                     "UC6yW44UGJJBvYTlfC7CRg2Q",  // Man Utd official channel
                     "UCMmVPVb0BwSIOWVeDwlPocQ",  // The United Stand
                     "UC7w8GnTF2Sp3wldDMtCCtVw",  // Stretford Paddock
-                    "UCWK5ujYgH7q3cA1Pt4ngvUw"   // Mark Goldbridge
                 ],
                 podcastFeeds: [
                     "https://audioboom.com/channels/5150866.rss",       // The United Stand
@@ -154,91 +153,64 @@ struct TeamSources {
         case "Newcastle United":
             return TeamSources(
                 youtubeChannelIds: [
-                    "UCFY2YvZqchOf9fUEqpJPYoA",  // Newcastle United official channel
-                    "UCVL-RKmrCOe6VQV9clwzYDg",  // The True Geordie
-                    "UC6MrV2f3-EZHBKfv_hBy9Pw",  // The Magpie Channel TV
-                    "UCNzCbX5Jir1MJUvj2TEzwOQ"   // NUFC TV
+                    "UCywGl_BPp9QhD0uAcP2HsJw",  // Newcastle United official channel
+                    "UCWaZLW7Bfa83J_h587dH1WQ",  // The True Geordie
                 ],
                 podcastFeeds: [
-                    "https://audioboom.com/channels/4940183.rss",                         // The Everything is Black and White Podcast
-                    "https://feeds.megaphone.fm/TAMC4911418870",                          // The Athletic's Newcastle podcast
-                    "https://feeds.acast.com/public/shows/the-magpie-channel",            // The Magpie Channel
-                    "https://feeds.megaphone.fm/nufc-matters"                             // NUFC Matters
+                    "https://feeds.megaphone.fm/RPSL8043727527",                         // The Everything is Black and White Podcast
+                    "https://feeds.megaphone.fm/tamc8329829902",                          // The Athletic's Newcastle podcast
                 ]
             )
         case "Nottingham Forest":
             return TeamSources(
                 youtubeChannelIds: [
-                    "UCT8fYzEYCO-7vMMNZR2pdlg",  // Nottingham Forest official channel
-                    "UCDwuKWoWCZMIrP3gML7KRBw",  // Nottingham Forest News
-                    "UC3r24w_37ZN2TOYSoQUNAoA",  // Forza Garibaldi
-                    "UCEZZ6fvx_nofyuL-bKPGl2A"   // Nottingham Forest Fan Channel
+                    "UCyAxjuAr8f_BFDGCO3Htbxw",  // Nottingham Forest official channel
                 ],
                 podcastFeeds: [
-                    "https://feeds.acast.com/public/shows/garibaldi-red",                 // Garibaldi Red
-                    "https://feeds.soundcloud.com/users/soundcloud:users:275864151/sounds.rss",  // Dore On Tour
-                    "https://feeds.buzzsprout.com/1976528.rss",                           // Forests Are Fireproof
-                    "https://feeds.megaphone.fm/TAMC1249159518"                           // The Athletic's Forest coverage
+                    "https://feeds.megaphone.fm/RPSL4344406766",                 // Garibaldi Red
                 ]
             )
         case "Southampton":
             return TeamSources(
                 youtubeChannelIds: [
-                    "UCH4H-h8IKRiVr-wy9FdHBGg",  // Southampton FC official channel
-                    "UCKnAk_5d159Xd-nBJNNKjGg",  // The Ugly Inside TV
-                    "UC2iFRV5jEF5XfVMB58ow-LA",  // Southampton Dellivery
-                    "UCj8R-nCKy-VFBtbVK8SZnJw"   // Total Saints Podcast
+                    "UCxvXjfiIHQ2O6saVx_ZFqnw",  // Southampton FC official channel
                 ],
                 podcastFeeds: [
-                    "https://audioboom.com/channels/5023799.rss",                         // The Total Saints Podcast
-                    "https://feeds.acast.com/public/shows/61c0cc0a76f9e600143bcd1e",      // The Ugly Inside
-                    "https://feeds.buzzsprout.com/1027929.rss",                           // Southampton Dellivery
-                    "https://feeds.megaphone.fm/TAMC1249159518"                           // The Athletic's Southampton coverage
+                    "https://feeds.acast.com/public/shows/632d9f5d0b0d520016eaaaf1",                         // The Total Saints Podcast
                 ]
             )
         case "Tottenham Hotspur":
             return TeamSources(
                 youtubeChannelIds: [
                     "UCEg25rdRZXg32iwai6N6l0w",  // Tottenham Hotspur official channel
-                    "UCWUCWx2Kw6TD-5eSvJbVPCg",  // SpursWeb
-                    "UCt4vqkiIeYZ4KSAc7Sd-8zQ",  // WeAreTottenhamTV
-                    "UC_Jc_kLX7QJlmox_yb3IkXw"   // The Spurs Web
+                    "UCUz_XIKFQOrliSqPZWJBq2g",  // WeAreTottenhamTV
                 ],
                 podcastFeeds: [
-                    "https://feeds.acast.com/public/shows/the-fighting-cock",             // The Fighting Cock
-                    "https://feeds.megaphone.fm/TAMC7824438163",                          // The Athletic's Spurs podcast (View from the Lane)
-                    "https://feeds.acast.com/public/shows/the-extra-inch",                // The Extra Inch
-                    "https://rss.acast.com/lastwordontottenham"                           // Last Word On Spurs
+                    "https://feeds.megaphone.fm/COMG2620229365",             // The Fighting Cock
+                    "https://feeds.megaphone.fm/tamc9359270914",                          // The Athletic's Spurs podcast (View from the Lane)
+                    "https://feeds.megaphone.fm/COMG6410538070",                          // Last 
                 ]
             )
         case "West Ham United":
             return TeamSources(
                 youtubeChannelIds: [
-                    "UC6KUZPXoZlUwxgJj5ufxI8A",  // West Ham United official channel
-                    "UCVpELdHX0iOYsC2xzWB6VSg",  // West Ham Fan TV
-                    "UCcEPUqv5hGGRrIL0_rNw0vg",  // Hammers Chat
-                    "UCmDnEwjYGFub22fPGbDwH4A"   // We Are West Ham
+                    "UCCNOsmurvpEit9paBOzWtUg",  // West Ham United official channel
+                    "UC_tt4cYHIHNQAFQj2V2Wi-w",  // West Ham Fan TV
                 ],
                 podcastFeeds: [
-                    "https://feeds.buzzsprout.com/746680.rss",                            // We Are West Ham
-                    "https://feeds.acast.com/public/shows/5e7a06bf6b8e25a09d9d29d8",      // The West Ham Way
-                    "https://rss.acast.com/thehammerschat",                               // Hammers Chat Podcast
-                    "https://feeds.megaphone.fm/TAMC5610892596"                           // The Athletic's West Ham coverage
+                    "https://feeds.megaphone.fm/COMG8966246610",                            // We Are West Ham
+                    "https://feeds.acast.com/public/shows/6310d339133a210012e8af38",      // The West Ham Way
+                    "https://feeds.megaphone.fm/COMG7120718439",                               // STOP! Hammer Time - the West Ham United Podcast
                 ]
             )
         case "Wolverhampton":
             return TeamSources(
                 youtubeChannelIds: [
-                    "UCeYF0AYKh4txiKJdJh2OD6g",  // Wolves official channel
-                    "UC_kwxowXj-WZq_5bnuuu3_g",  // Talking Wolves
-                    "UCF-Ww-RqDAq2Hul8qmPrPKw",  // Wolves Fancast
-                    "UCaRzR8BHlUw9xCo7qWgGObw"   // The Wolf Pack Podcast
+                    "UCQ7Lqg5Czh5djGK6iOG53KQ",  // Wolves official channel
                 ],
                 podcastFeeds: [
-                    "https://feeds.acast.com/public/shows/62bc2ab09fb8ac001277ebb9",      // Talking Wolves
-                    "https://audioboom.com/channels/4950577.rss",                         // E&S Wolves Podcast
-                    "https://feeds.captivate.fm/the-molineux-view/",                      // The Molineux View
-                    "https://feeds.buzzsprout.com/919120.rss"                             // Wolves Fancast
+                    "https://feeds.megaphone.fm/AUDD2191021141",                         // E&S Wolves Podcast
+                    "https://feeds.megaphone.fm/AUDD2191021141"                             // Wolves Fancast
                 ]
             )
         default:
