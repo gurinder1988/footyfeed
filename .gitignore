@@ -82,4 +82,20 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 # Code Injection
-injectionforxcode/ 
+injectionforxcode/
+
+# Ignore everything except docs
+/*
+!.gitignore
+!docs/
+!docs/**
+
+# Xcode specific ignores
+.DS_Store
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# And not these files
+!README.md 
