@@ -1,3 +1,11 @@
+# GitHub - Only track docs folder
+/*
+!.gitignore
+!docs/
+!docs/**
+!README.md
+
+# Everything below this line is for local Git only
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -47,17 +55,14 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
+.swiftpm/
 
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+Pods/
 
 # Carthage
 #
@@ -84,18 +89,41 @@ fastlane/test_output
 # Code Injection
 injectionforxcode/
 
-# Ignore everything except docs
-/*
-!.gitignore
-!docs/
-!docs/**
-
-# Xcode specific ignores
+# Local Git - Xcode specific ignores
 .DS_Store
-*.xcuserstate
 xcuserdata/
+*.xcuserstate
 *.xcscmblueprint
 *.xccheckout
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 
-# And not these files
-!README.md 
+# App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Other
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 
